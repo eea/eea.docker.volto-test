@@ -61,7 +61,7 @@ if [[ "$1" == "eslint"* ]]; then
 fi
 
 if [[ "$1" == "stylelint"* ]]; then
-  exec ../../../node_modules/stylelint/bin/stylelint.js 'src/**/*.{css,less}'
+  exec ../../../node_modules/stylelint/bin/stylelint.js --allow-empty-input 'src/**/*.{css,less}'
 fi
 
 if [[ "$1" == "prettier"* ]]; then
