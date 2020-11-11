@@ -15,6 +15,7 @@ RUN npm install -g yo @plone/generator-volto
 USER node
 RUN yo --no-insight @plone/volto my-volto-project --no-interactive
 
-COPY docker-entrypoint.sh /docker-entrypoint.sh
+COPY jsconfig docker-entrypoint.sh /
+
 ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["eslint"]
+CMD ["test"]

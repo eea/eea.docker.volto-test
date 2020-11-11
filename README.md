@@ -45,6 +45,7 @@ Docker Image optimized for running tests over Volto Add-ons
 
 ## Supported commands
 
+- `test` Run `jest` Volto add-on unit tests (Default)
 - `eslint` Run `eslint` checks over Volto add-on code
 - `stylelint` Run `stylelint` checks over Volto add-on code
 - `prettier` Run `prettier` checks over Volto add-on code
