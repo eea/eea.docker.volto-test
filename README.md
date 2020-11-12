@@ -33,6 +33,15 @@ Docker Image optimized for running tests over Volto Add-ons
                  -e DEPENDENCIES="@eeacms/volto-blocks-form" \
              eeacms/volto-test eslint
 
+## Local usage
+
+    $ cd src/addons/volto-slate
+
+    $ docker run -it --rm \
+                 -v $(pwd):/opt/frontend/my-volto-project/src/addons/volto-slate \
+                 -e GIT_NAME=volto-slate \
+             eeacms/volto-test
+
 ## Supported environment variables
 
 - `GIT_NAME` Git repo name (e.g.: `GIT_NAME=volto-group-block`). Required
