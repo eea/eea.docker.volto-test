@@ -50,7 +50,7 @@ fi
 yarn
 
 if [[ "$1" == "test"* ]]; then
-  node /jsconfig $PACKAGE src/addons/$GIT_NAME
+  node /jsconfig $PACKAGE addons/$GIT_NAME/src
   yarn add -W --dev jest-junit
   exec bash -c "set -o pipefail; ./node_modules/jest/bin/jest.js --env=jsdom --passWithNoTests src/addons/$GIT_NAME --watchAll=false --reporters=default --reporters=jest-junit --collectCoverage --coverageReporters lcov cobertura text 2>&1 | tee -a unit_tests_log.txt"
 fi
