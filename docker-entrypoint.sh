@@ -33,6 +33,10 @@ if [ ! -z "$DEPENDENCIES" ]; then
 fi
 
 cd /opt/frontend/my-volto-project
+
+sed -i "s#<rootDir>/src/addons/#<rootDir>/src/addons/$GIT_NAME/src#g" jest.config.js
+
+
 yo --force --no-insight @plone/volto --no-interactive --skip-install $WORKSPACES $ADDONS
 
 if [ ! -d "/opt/frontend/my-volto-project/src/addons/$GIT_NAME" ]; then
