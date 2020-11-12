@@ -50,7 +50,8 @@ fi
 yarn
 
 if [[ "$1" == "test"* ]]; then
-  sed -i "s#<rootDir>/src/addons/#<rootDir>/src/addons/$GIT_NAME/src#g" jest.config.js
+  sed -i "s#\$GIT_NAME#$GIT_NAME#g" jest.config.js
+
   node /jsconfig $PACKAGE addons/$GIT_NAME/src
   yarn add -W --dev jest-junit jest-transform-stub
   exec bash -c "set -o pipefail; ./node_modules/jest/bin/jest.js --env=jsdom --passWithNoTests src/addons/$GIT_NAME --watchAll=false --reporters=default --reporters=jest-junit --collectCoverage --coverageReporters lcov cobertura text 2>&1 | tee -a unit_tests_log.txt"
