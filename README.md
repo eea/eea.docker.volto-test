@@ -44,6 +44,7 @@ Docker Image optimized for running tests over Volto Add-ons
 
 ## Supported environment variables
 
+- `TIMEOUT` Timeout in ms (e.g.: `TIMEOUT=60000`). Default: `120000`
 - `GIT_NAME` Git repo name (e.g.: `GIT_NAME=volto-group-block`). Required
 - `GIT_URL` Git repo root url (e.g.: `GIT_URL=https://gitlab.com`). Default `https://github.com`
 - `GIT_BRANCH` Run tests over the provided git branch (e.g.: `GIT_BRANCH=develop`). Default: `master`
@@ -51,6 +52,8 @@ Docker Image optimized for running tests over Volto Add-ons
 - `GIT_CHANGE_ID` Run tests over a github pull-request (e.g.: `GIT_CHANGE_ID=PR-5`. Default: `<not-set>`
 - `NAMESPACE` Volto add-on namespace (e.g.: `NAMESPACE=@eeacms`). Default: `<not-set>`
 - `DEPENDENCIES` Volto add-on dependencies space separated (e.g.: DEPENDENCIES=`@eeacms/volto-blocks-form volto-slate`). Default: `<not-set>`
+- `RAZZLE_API_PATH` Razzle API path (e.g.: `RAZZLE_API_PATH=http://foo.bar:8080/plone`). Default: `http://plone:8080/Plone`
+- `CYPRESS_API_PATH` Cypress API Path (e.g.: `CYPRESS_API_PATH=http://foo.bar:8080/plone`). Default: `$RAZZLE_API_PATH`
 
 ## Supported commands
 
@@ -58,6 +61,7 @@ Docker Image optimized for running tests over Volto Add-ons
 - `eslint` Run `eslint` checks over Volto add-on code
 - `stylelint` Run `stylelint` checks over Volto add-on code
 - `prettier` Run `prettier` checks over Volto add-on code
+- `cypress` Run `cypress` checks over Volto add-on code
 
 ## Copyright and license
 
