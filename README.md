@@ -1,5 +1,7 @@
 # Testing Volto Add-ons Docker Image
 
+> **DEPRECATED** - Please use official [@plone/volto-addon-ci](https://github.com/plone/volto-addon-ci)
+
 Docker Image optimized for running tests over Volto Add-ons
 
 ## Supported tags and respective Dockerfile links
